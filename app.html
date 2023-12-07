@@ -6,39 +6,9 @@
 </head>
 
 <body>
-<input class="js-input">
-<p class="js-sample-text">
-    THIS IS  A TEST TEXT TO BE SEARCHED FOR THE HIGHLIGHTED TEXT.
-</p>
-<script>
-    let searchText='';
-   let paragraph=document.querySelector('.js-sample-text');
-   let originalText=paragraph.innerText;
-   let sampleText=paragraph.innerText.toLowerCase();
-    //console.log(sampleText);
 
-    const input=document.querySelector('.js-input');
-    input.addEventListener('keyup',(event)=>{
-    if(event.key==='Backspace'){
-        searchText=searchText.slice(0,-1);
-        //console.log(searchText);
-        if(searchText.length>=0){
-         highlight(searchText,sampleText);}
-    }
-    else{
-        searchText+=event.key.toLowerCase();
-        //console.log(searchText);
-        highlight(searchText,sampleText);
-    }
-})
+<script src="app.js">
 
-function highlight(searchText, sampleText){
-if(sampleText.includes(searchText)){
-        sampleText=originalText.replaceAll(searchText.toUpperCase(),`<mark>${searchText.toUpperCase()}</mark>`);
-        //console.log(sampleText)
-        paragraph.innerHTML=sampleText;
-    }
-}
 
 </script>
 </body>
